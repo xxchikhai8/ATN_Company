@@ -1,0 +1,46 @@
+{{>header}}
+<title>Product list</title>
+<h2 align='center'>
+    Product List
+</h2>
+<table class="table" style="font-size:20px">
+    <thead>
+        <tr>
+            <th></th>
+            <th scope="row">Product ID</th>
+            <th scope="row">Product Name</th>
+            <th scope="row">Amount</th>
+            <th scope="row">Price</th>
+            <th scope="row"></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td></td>
+            <td>{{this.proID}}</td>
+            <td>{{this.proName}}</td>
+            <td>{{this.amount}}</td>
+            <td>{{this.price}}</td>
+            <td>
+                <a href="/catalog/{{this._id}}">
+                    <i class="fa fa-pencil fa-lg"></i>
+                </a>
+                <a href="/catalog/delete/{{this._id}}"
+                    onclick="return confirm('Are you sure to delete this record?');">
+                    <i class="fa fa-trash"></i>
+                </a>
+            </td>
+            <td></td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+<div align='center'>
+    <h3>
+        <a href="/catalog" class="btn btn-danger">
+            <i class="fa fa-plus"> </i> Create New
+        </a>
+    </h3>
+</div>

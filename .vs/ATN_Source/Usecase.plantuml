@@ -1,0 +1,13 @@
+@startuml
+
+left to right direction
+actor Admin
+package ATN_Web {
+  Admin --- (Create New Product/Employee)
+  Admin --- (Update Product/Employee)
+  Admin --- (Delete Product/Employee)
+  Admin --- (View Product/Employee)
+}
+
+
+@enduml

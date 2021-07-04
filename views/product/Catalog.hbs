@@ -1,0 +1,45 @@
+{{>header}}
+<h3 align='center'>Catalog</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th></th>
+            <th>ID</th>
+            <th>Product Name</th>
+            <th>Amount</th>
+            <th>Price</th>
+            <th>Images</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+            <tr>
+                <td></td>
+                <td>{{{this.proID}}}</td>
+                <td>{{{this.proName}}}</td>
+                <td>{{{this.Amount}}}</td>
+                <td>{{{this.Price}}}</td>
+                <td>
+                    <a href="/product/{{this._id}}">
+                        <i class="fa fa-pencil fa-lg" aria-hidden="true"></i>
+                    </a>
+                    <a href="/product/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record?');">
+                        <i class="fa fa-trash fa-lg" aria-hidden="true"></i>
+                    </a>
+                </td>
+            </tr>
+            <td></td>
+        {{/each}}
+    </tbody>
+</table>
+<div align='center'>
+    <h3>
+        <a href="/product" class="btn btn-danger">
+            <i class="fa fa-plus"> </i> Create New
+        </a>
+    </h3>
+</div>
+
+{{>footer}}
